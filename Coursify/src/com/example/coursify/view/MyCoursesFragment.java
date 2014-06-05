@@ -106,6 +106,7 @@ public class MyCoursesFragment extends Fragment {
 
 		ArrayList<Course> courseList;
 
+		@SuppressWarnings("unchecked")
 		public CourseAdapter(ArrayList<Course> items) {
 			courseList = (ArrayList<Course>) items.clone();
 		}

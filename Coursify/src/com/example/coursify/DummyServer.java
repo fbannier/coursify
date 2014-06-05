@@ -18,9 +18,9 @@ public class DummyServer implements Server {
 		coursesUser.add(new Course("Vorlesung 3", "Prof Z."));
 
 		coursesAvailable = new ArrayList<Course>();
-		coursesAvailable.add(new Course("Vorlesung 1", "Prof X."));
-		coursesAvailable.add(new Course("Vorlesung 2", "Prof Y."));
-		coursesAvailable.add(new Course("Vorlesung 3", "Prof Z."));
+		coursesAvailable.add(coursesUser.get(0));
+		coursesAvailable.add(coursesUser.get(1));
+		coursesAvailable.add(coursesUser.get(2));
 		coursesAvailable.add(new Course("Vorlesung 4", "Prof X."));
 		coursesAvailable.add(new Course("Vorlesung 5", "Prof Y."));
 		coursesAvailable.add(new Course("Vorlesung 6", "Prof Z."));
@@ -69,6 +69,7 @@ public class DummyServer implements Server {
 
 	@Override
 	public void addUserLecture(User user, Course lecture) {
-		coursesUser.add(lecture);
+		if (!coursesUser.contains(lecture))
+			coursesUser.add(lecture);
 	}
 }

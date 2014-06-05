@@ -18,9 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Bewertung"
-            android:textSize="22sp" 
-            android:textColor="#ffffff"/>
+            android:text="@string/course_rating"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
 
         <RatingBar
             android:id="@+id/RatingBar01"
@@ -48,9 +48,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Beschreibung"
-            android:textSize="22sp"
-            android:textColor="#ffffff" />
+            android:text="@string/course_description"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -75,9 +75,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:text="Professor:"
-            android:textColor="#ffffff"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:text="@string/course_prof_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/prof"
@@ -87,9 +87,10 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerHorizontal="false"
                 android:layout_centerVertical="false"
+                android:text="Prof X."
                 android:gravity="bottom"
-            android:textColor="#ffffff"
-                android:text="Prof. X" />
+                android:textColor="#ffffff" />
+
         </RelativeLayout>
 
         <LinearLayout

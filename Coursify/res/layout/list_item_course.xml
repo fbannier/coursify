@@ -21,7 +21,6 @@
             android:layout_margin="4dp"
             android:gravity="center|left"
             android:maxLines="1"
-            android:text="Software Engineering"
             android:textColor="#555"
             android:textSize="20sp" />
 
@@ -49,7 +48,7 @@
                 android:layout_marginRight="3dp"
                 android:gravity="center|left"
                 android:maxLines="1"
-                android:text="Professor: "
+                android:text="@string/course_item_prof_label"
                 android:textColor="#555"
                 android:textSize="16sp" />
 
@@ -61,7 +60,6 @@
                 android:layout_marginRight="3dp"
                 android:gravity="center|right"
                 android:maxLines="1"
-                android:text="Prof. X"
                 android:textColor="#555"
                 android:textSize="14sp" />
 

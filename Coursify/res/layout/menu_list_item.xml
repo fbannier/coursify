@@ -12,7 +12,6 @@
         android:layout_margin="4dip"
         android:gravity="center|left"
         android:maxLines="1"
-        android:text="My Courses"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 

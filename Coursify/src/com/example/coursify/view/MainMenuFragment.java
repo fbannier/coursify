@@ -78,13 +78,16 @@ public class MainMenuFragment extends ListFragment {
 				switch (position) {
 				case 0:
 					view.setBackgroundColor(0xFF666666);
-					main.setMTitle("Meine Vorlesungen");
+					main.setMTitle(main.getResources().getString(
+							R.string.title_activity_my_courses));
 					FragmentSwitcher.switchToFragment(new MyCoursesFragment(),
 							main);
 
 					break;
 				case 1:
 					view.setBackgroundColor(0xFF666666);
+					main.setMTitle(main.getResources().getString(
+							R.string.title_activity_add_courses));
 					FragmentSwitcher.switchToFragment(new AddCoursesFragment(),
 							main);
 					break;
