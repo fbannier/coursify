@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 import android.os.Parcel;
 
-public class Professor extends User {
+public class Student extends User {
 
-	public Professor(String name, ArrayList<Lecture> lectures) {
+	public Student(String name, ArrayList<Lecture> lectures) {
 		super(name, lectures);
 	}
 
 	@Override
 	public String getRole() {
-		return "Prof";
+		return "Student";
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Professor extends User {
 	}
 
 	@Override
-	public void writeToParcel(Parcel dest, int flags) {
+	public void writeToParcel(Parcel arg0, int arg1) {
 		// TODO Auto-generated method stub
 
 	}

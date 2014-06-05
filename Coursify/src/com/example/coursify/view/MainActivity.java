@@ -1,7 +1,5 @@
 package com.example.coursify.view;
 
-import java.util.ArrayList;
-
 import android.annotation.TargetApi;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -15,8 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.coursify.R;
-import com.example.coursify.model.Lecture;
-import com.example.coursify.model.User;
 
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MainActivity extends ActionBarActivity {
@@ -25,14 +21,11 @@ public class MainActivity extends ActionBarActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
-	private User currentUser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
-
-		mockCurrentUser();
 
 		initializeDrawer();
 		initializeMenu();
@@ -138,22 +131,5 @@ public class MainActivity extends ActionBarActivity {
 	public void setMTitle(CharSequence mTitle) {
 		this.mTitle = mTitle;
 		getActionBar().setTitle(this.mTitle);
-	}
-
-	public User getCurrentUser() {
-		return currentUser;
-	}
-
-	public void mockCurrentUser() {
-		currentUser = new User();
-		ArrayList<Lecture> lectures = new ArrayList<Lecture>();
-		lectures.add(new Lecture("Vorlesung 1"));
-		lectures.add(new Lecture("Vorlesung 2"));
-		lectures.add(new Lecture("Vorlesung 3"));
-		lectures.add(new Lecture("Vorlesung 4"));
-		lectures.add(new Lecture("Vorlesung 5"));
-		lectures.add(new Lecture("Vorlesung 6"));
-		lectures.add(new Lecture("Vorlesung 7"));
-		currentUser.setLectures(lectures);
 	}
 }

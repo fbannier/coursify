@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!--
@@ -17,6 +18,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="activated" parent="AppTheme"/>
-    
+    <style name="activated" parent="AppTheme" />
+
+
 </resources>
