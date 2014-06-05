@@ -192,13 +192,12 @@ public class LoginActivity extends Activity {
 
 			try {
 				// Simulate network access.
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				return false;
 			}
 
 			mUser = mServer.login(mUsername, mPassword);
-
 			return (mUser != null);
 		}
 

@@ -11,7 +11,13 @@ public interface Server {
 
 	public User login(String username, String password);
 
-	public ArrayList<Lecture> getLectures(String username, String password);
+	public ArrayList<Lecture> getUserLectures(User user);
+
+	public ArrayList<Lecture> getAvailableLectures(User user);
 
 	public ArrayList<Comment> getComments(Lecture lecture);
+
+	public void removeUserLecture(User user, Lecture lecture);
+
+	public void addUserLecture(User user, Lecture lecture);
 }

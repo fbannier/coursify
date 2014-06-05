@@ -1,17 +1,27 @@
 package com.example.coursify.model;
 
 public class Lecture {
-	private CharSequence name;
+	private String name;
+	private String prof;
 
-	public Lecture(CharSequence name) {
+	public Lecture(String name, String prof) {
 		this.name = name;
+		this.prof = prof;
 	}
 
-	public CharSequence getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(CharSequence name) {
+	public String getProf() {
+		return prof;
+	}
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setProf(String prof) {
+		this.prof = prof;
 	}
 }

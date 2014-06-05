@@ -28,7 +28,7 @@ public class MainMenuFragment extends MainActivityHoldingFragment {
 		}
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-				this.getActivity(), R.layout.course_list_item,
+				this.getActivity(), R.layout.list_item_course,
 				R.id.list_content, listItems);
 
 		menuItemsList.setAdapter(adapter);
