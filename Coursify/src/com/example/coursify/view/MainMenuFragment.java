@@ -85,7 +85,7 @@ public class MainMenuFragment extends ListFragment {
 					break;
 				case 1:
 					view.setBackgroundColor(0xFF666666);
-					FragmentSwitcher.switchToFragment(new CourseFragment(),
+					FragmentSwitcher.switchToFragment(new AddCoursesFragment(),
 							main);
 					break;
 				case 2:

@@ -39,6 +39,10 @@
             android:label="@string/title_activity_my_courses" >
         </activity>
         <activity
+            android:name="com.example.coursify.view.AddCoursesFragment"
+            android:label="@string/title_activity_add_courses" >
+        </activity>
+        <activity
             android:name="com.example.coursify.view.CourseFragment"
             android:label="@string/title_activity_course_fragment" >
         </activity>
