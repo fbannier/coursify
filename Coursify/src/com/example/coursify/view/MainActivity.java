@@ -1,6 +1,7 @@
 package com.example.coursify.view;
 
 import android.annotation.TargetApi;
+import android.app.Fragment;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,8 +34,7 @@ public class MainActivity extends ActionBarActivity {
 		mTitle = "Meine Vorlesungen";
 	}
 
-	private void addFragment(MainActivityHoldingFragment fragment) {
-		fragment.setMain(this);
+	private void addFragment(Fragment fragment) {
 		mDrawerLayout.addView(fragment.onCreateView(getLayoutInflater(),
 				mDrawerLayout, null));
 	}
@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
 	private void initializeDrawer() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-		addFragment(new MyLecturesFragment());
+		addFragment(new MyCoursesFragment());
 		addFragment(new MainMenuFragment());
 
 		mDrawerTitle = "Menü";

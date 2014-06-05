@@ -1,10 +1,10 @@
 package com.example.coursify.model;
 
-public class Lecture {
+public class Course {
 	private String name;
 	private String prof;
 
-	public Lecture(String name, String prof) {
+	public Course(String name, String prof) {
 		this.name = name;
 		this.prof = prof;
 	}

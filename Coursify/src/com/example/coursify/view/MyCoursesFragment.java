@@ -3,6 +3,7 @@ package com.example.coursify.view;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,13 +16,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.coursify.Connection;
-import com.example.coursify.LecturesFragment;
 import com.example.coursify.R;
 import com.example.coursify.Server;
-import com.example.coursify.model.Lecture;
+import com.example.coursify.model.Course;
 import com.example.coursify.model.User;
 
-public class MyLecturesFragment extends LecturesFragment {
+public class MyCoursesFragment extends Fragment {
 	private ListView mListView = null;
 	private int _toDelete = -1;
 
@@ -41,7 +41,7 @@ public class MyLecturesFragment extends LecturesFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		View view = inflater.inflate(R.layout.fragment_my_lectures, container,
+		View view = inflater.inflate(R.layout.fragment_my_courses, container,
 				false);
 		mListView = (ListView) view.findViewById(R.id.my_lectures_list);
 		refreshCourses();
@@ -79,10 +79,10 @@ public class MyLecturesFragment extends LecturesFragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				getMain().setMTitle(getLectures().get(position).getName());
-				FragmentSwitcher.switchToFragment(new LectureFragment(),
-						getMain());
-				getMain().initializeComments();
+				MainActivity main = (MainActivity) view.getContext();
+				main.setMTitle(getLectures().get(position).getName());
+				FragmentSwitcher.switchToFragment(new CourseFragment(), main);
+				main.initializeComments();
 			}
 
 		});
@@ -90,7 +90,7 @@ public class MyLecturesFragment extends LecturesFragment {
 		return view;
 	}
 
-	private ArrayList<Lecture> getLectures() {
+	private ArrayList<Course> getLectures() {
 		Server server = Connection.getInstance().getServer();
 		User user = Connection.getInstance().getUser();
 
@@ -104,10 +104,10 @@ public class MyLecturesFragment extends LecturesFragment {
 
 	private class CourseAdapter extends BaseAdapter {
 
-		ArrayList<Lecture> courseList;
+		ArrayList<Course> courseList;
 
-		public CourseAdapter(ArrayList<Lecture> items) {
-			courseList = (ArrayList<Lecture>) items.clone();
+		public CourseAdapter(ArrayList<Course> items) {
+			courseList = (ArrayList<Course>) items.clone();
 		}
 
 		@Override
@@ -134,7 +134,7 @@ public class MyLecturesFragment extends LecturesFragment {
 				out = vi.inflate(R.layout.list_item_course, null);
 			}
 
-			Lecture lecture = courseList.get(position);
+			Course lecture = courseList.get(position);
 			TextView name = (TextView) out.findViewById(R.id.item_course_name);
 			TextView prof = (TextView) out.findViewById(R.id.item_course_prof);
 			name.setText(lecture.getName());

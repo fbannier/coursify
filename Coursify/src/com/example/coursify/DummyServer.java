@@ -3,28 +3,28 @@ package com.example.coursify;
 import java.util.ArrayList;
 
 import com.example.coursify.model.Comment;
-import com.example.coursify.model.Lecture;
+import com.example.coursify.model.Course;
 import com.example.coursify.model.Professor;
 import com.example.coursify.model.Student;
 import com.example.coursify.model.User;
 
 public class DummyServer implements Server {
-	private final ArrayList<Lecture> coursesUser, coursesAvailable;
+	private final ArrayList<Course> coursesUser, coursesAvailable;
 
 	public DummyServer() {
-		coursesUser = new ArrayList<Lecture>();
-		coursesUser.add(new Lecture("Vorlesung 1", "Prof X."));
-		coursesUser.add(new Lecture("Vorlesung 2", "Prof Y."));
-		coursesUser.add(new Lecture("Vorlesung 3", "Prof Z."));
+		coursesUser = new ArrayList<Course>();
+		coursesUser.add(new Course("Vorlesung 1", "Prof X."));
+		coursesUser.add(new Course("Vorlesung 2", "Prof Y."));
+		coursesUser.add(new Course("Vorlesung 3", "Prof Z."));
 
-		coursesAvailable = new ArrayList<Lecture>();
-		coursesAvailable.add(new Lecture("Vorlesung 1", "Prof X."));
-		coursesAvailable.add(new Lecture("Vorlesung 2", "Prof Y."));
-		coursesAvailable.add(new Lecture("Vorlesung 3", "Prof Z."));
-		coursesAvailable.add(new Lecture("Vorlesung 4", "Prof X."));
-		coursesAvailable.add(new Lecture("Vorlesung 5", "Prof Y."));
-		coursesAvailable.add(new Lecture("Vorlesung 6", "Prof Z."));
-		coursesAvailable.add(new Lecture("Vorlesung 7", "Prof X."));
+		coursesAvailable = new ArrayList<Course>();
+		coursesAvailable.add(new Course("Vorlesung 1", "Prof X."));
+		coursesAvailable.add(new Course("Vorlesung 2", "Prof Y."));
+		coursesAvailable.add(new Course("Vorlesung 3", "Prof Z."));
+		coursesAvailable.add(new Course("Vorlesung 4", "Prof X."));
+		coursesAvailable.add(new Course("Vorlesung 5", "Prof Y."));
+		coursesAvailable.add(new Course("Vorlesung 6", "Prof Z."));
+		coursesAvailable.add(new Course("Vorlesung 7", "Prof X."));
 	}
 
 	@Override
@@ -46,29 +46,29 @@ public class DummyServer implements Server {
 	}
 
 	@Override
-	public ArrayList<Comment> getComments(Lecture lecture) {
+	public ArrayList<Comment> getComments(Course lecture) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList<Lecture> getUserLectures(User user) {
+	public ArrayList<Course> getUserLectures(User user) {
 		return coursesUser;
 	}
 
 	@Override
-	public ArrayList<Lecture> getAvailableLectures(User user) {
+	public ArrayList<Course> getAvailableLectures(User user) {
 
 		return coursesAvailable;
 	}
 
 	@Override
-	public void removeUserLecture(User user, Lecture lecture) {
+	public void removeUserLecture(User user, Course lecture) {
 		coursesUser.remove(lecture);
 	}
 
 	@Override
-	public void addUserLecture(User user, Lecture lecture) {
+	public void addUserLecture(User user, Course lecture) {
 		coursesUser.add(lecture);
 	}
 }

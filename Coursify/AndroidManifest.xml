@@ -28,23 +28,23 @@
         </activity>
         <activity
             android:name="com.example.coursify.LectureListActivity"
-            android:label="@string/title_activity_lecture_list" >
+            android:label="@string/title_activity_course_list" >
         </activity>
         <activity
             android:name="com.example.coursify.view.MainMenuFragment"
             android:label="@string/title_activity_main_menu" >
         </activity>
         <activity
-            android:name="com.example.coursify.view.MyLecturesFragment"
-            android:label="@string/title_activity_my_lectures" >
+            android:name="com.example.coursify.view.MyCoursesFragment"
+            android:label="@string/title_activity_my_courses" >
         </activity>
         <activity
-            android:name="com.example.coursify.view.LectureFragment"
-            android:label="@string/title_activity_lecture_fragment" >
+            android:name="com.example.coursify.view.CourseFragment"
+            android:label="@string/title_activity_course_fragment" >
         </activity>
         <activity
-            android:name="com.example.coursify.LecturesFragment"
-            android:label="@string/title_activity_lectures_fragment" >
+            android:name="com.example.coursify.CourseFragment"
+            android:label="@string/title_activity_courses_fragment" >
         </activity>
     </application>
 

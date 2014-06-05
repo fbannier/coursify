@@ -1,5 +1,7 @@
 package com.example.coursify.view;
 
+import android.app.Activity;
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -13,7 +15,7 @@ import android.widget.ListView;
 
 import com.example.coursify.R;
 
-public class MainMenuFragment extends MainActivityHoldingFragment {
+public class MainMenuFragment extends ListFragment {
 	private View view;
 
 	@Override
@@ -51,29 +53,40 @@ public class MainMenuFragment extends MainActivityHoldingFragment {
 		// }
 	}
 
+	@Override
+	public void onAttach(Activity activity) {
+		ListView menuItemsList = (ListView) activity
+				.findViewById(R.id.menu_items_list);
+
+		initializeMenuItemsList(menuItemsList);
+	}
+
 	private void initializeMenuItemsList(ListView menuItemsList) {
 		menuItemsList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
+				MainActivity main = (MainActivity) view.getContext();
+
 				// Da diese Liste statisch ist, werden hier bekannte Positonen
 				// verwendet
+
 				for (int i = 0; i < parent.getChildCount(); i++) {
 					parent.getChildAt(i).setBackgroundColor(0xFF333333);
 				}
 				switch (position) {
 				case 0:
 					view.setBackgroundColor(0xFF666666);
-					getMain().setMTitle("Meine Vorlesungen");
-					FragmentSwitcher.switchToFragment(new MyLecturesFragment(),
-							getMain());
+					main.setMTitle("Meine Vorlesungen");
+					FragmentSwitcher.switchToFragment(new MyCoursesFragment(),
+							main);
 
 					break;
 				case 1:
 					view.setBackgroundColor(0xFF666666);
-					FragmentSwitcher.switchToFragment(new LectureFragment(),
-							getMain());
+					FragmentSwitcher.switchToFragment(new CourseFragment(),
+							main);
 					break;
 				case 2:
 					view.setBackgroundColor(0xFF666666);
@@ -84,10 +97,11 @@ public class MainMenuFragment extends MainActivityHoldingFragment {
 					break;
 				}
 
-				DrawerLayout drawer = (DrawerLayout) getMain().findViewById(
-						R.id.drawer_layout);
-				drawer.closeDrawers();
-				getMain().initializeComments();
+				DrawerLayout drawer = (DrawerLayout) main
+						.findViewById(R.id.drawer_layout); // if (drawer !=
+															// null) {
+				drawer.closeDrawers(); // } main.initializeComments();
+
 			}
 
 		});
